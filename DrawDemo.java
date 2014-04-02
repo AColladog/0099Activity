@@ -37,6 +37,8 @@ public class DrawDemo
     
     /**
      * Nos permite hacer un triángulo equilatero de lado 100
+     * @param xPos que es la posición de inicio en el eje x
+     * @param yPos que es la posición de inicio en el eje y
      */
     public void drawTriangle(int xPos, int yPos){
         Pen pen = new Pen(xPos, yPos, myCanvas);
@@ -48,14 +50,27 @@ public class DrawDemo
     }
     
     /**
-     * Nos permite realizar un pentágono de lado 100
+     * Nos permite realizar un pentágono de lado 100, xPos = 250 e yPos = 390
      */
-    public void drawPentagon(int xPos, int yPos){
-        Pen pen = new Pen(xPos, yPos, myCanvas);
+    public void drawPentagon(){
+        Pen pen = new Pen(250, 390, myCanvas);
         pen.setColor(Color.GREEN);
         for(int i = 0; i<5; i++){
             pen.move(100);
             pen.turn(-72);
+        }
+    }
+    
+    /**
+     * Nos permite dibujar un poligono de lado 100, xPos = 250 e yPos = 390
+     * @param numeroLados que es el número de lados que tendra el polígono
+     */
+    public void drawPoligon(int numeroLados){
+        Pen pen = new Pen(250, 390, myCanvas);
+        int giro = ( 180 - ( 180 * (numeroLados-2) ) / numeroLados);
+        for(int i = 0; i < numeroLados; i++){
+            pen.move(100);
+            pen.turn(-giro);
         }
     }
 
