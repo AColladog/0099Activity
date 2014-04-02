@@ -87,6 +87,17 @@ public class DrawDemo
             pen.turn(10);
         }
     }
+    
+    /**
+     * 
+     */
+    public void drawSpiral(){
+        Pen pen = new Pen(250, 200, myCanvas);
+        for(int i = 0; i<52; i++){
+            pen.move(3*i);
+            pen.turn(90);
+        }
+    }
 
     /**
      * Draw a square in the pen's color at the pen's location.
