@@ -35,15 +35,28 @@ public class DrawDemo
         square(pen);
     }
     
+    /**
+     * Nos permite hacer un triángulo equilatero de lado 100
+     */
     public void drawTriangle(int xPos, int yPos){
         Pen pen = new Pen(xPos, yPos, myCanvas);
         pen.setColor(Color.GREEN);
-        pen.move(100);
-        pen.turn(-120);
-        pen.move(100);
-        pen.turn(-120);
-        pen.move(100);
-        
+        for(int i = 0; i<3; i++){
+            pen.move(100);
+            pen.turn(-120);
+        }
+    }
+    
+    /**
+     * Nos permite realizar un pentágono de lado 100
+     */
+    public void drawPentagon(int xPos, int yPos){
+        Pen pen = new Pen(xPos, yPos, myCanvas);
+        pen.setColor(Color.GREEN);
+        for(int i = 0; i<5; i++){
+            pen.move(100);
+            pen.turn(-72);
+        }
     }
 
     /**
